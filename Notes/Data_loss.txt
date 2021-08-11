@@ -1,0 +1,51 @@
+when data is sent over the internet, electric signals are sent through metal,
+plastic or air. This results in common errors
+
+Noise is the distortion that outside influences cause to signals that are trying
+to be sent. All signals pick up some noise. Waves are not a perfect line. These
+signals should still be readable, but if there is too much noise, it can be read
+as a different value than what was sent.
+
+Poor connections:
+Some old network cables can be slower and when signals pass across them, they
+can distort it and cause errors. However, modern day cables are high quality and
+have very fast connections.
+
+Crosstalk Errors
+Signals can interfere with each other, especially if they are travelling along
+cables that are close to each other, this can cause distortion.
+
+Detecting Errors:
+
+Checksums:
+Data is sent across a network in an encoded form, in 1s and 0s.Checksums are
+arithmetic processes performed on the bits that comprise the data. They produce
+a result that can be sent along with the message that the receiver can check. To
+make sure that it is the same data sent. A small change can result in a large
+difference of the checksum calculation.
+
+A common type of Checksums is a parity bits checksum. The sender counts how many
+1s and 0s are in the message. There are two types, even and odd, in even, it
+will check if the number of 1s are even. If it has an odd amount already, the
+parity bit will be set to 1, making the amount even. If it is already even and
+the parity bit will be 0 and it ensures the count of 1s is odd.
+This means a quick check of data that comes in. However, it is not always right,
+if two bits are incorrect, it will appear as correct.
+
+How to deal with errors:
+When an error message is detected, there is not much that can be done, so you
+must ask for data to be resent. The most common error correction method is
+automatic repeat requests, it dictates how when and how repeats happen, the
+process is universal. It doesn't have to come from the receiving computer, but
+any one along the journey that the data takes. Checksums need to be quick so
+all of the computers and network switches can check if the data is correct that
+they are receiving. This results in error detection and correction being
+distributed so it is faster.
+
+Forward error correction or FEC:
+
+FEC is a error correction method that detects and corrects a number of errors
+in transmitted data (without retransmission). The sends sends a redundant error
+correcting code along with the data. If it finds that the data is free from
+errors, it executes error-correcting code that generates the actual frame. It
+then removes the redundant bits before passing the message to the upper layers.
