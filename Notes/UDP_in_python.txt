@@ -1,0 +1,28 @@
+UDP is different to TCP because it is connectionless, if TCP was used, a server
+socket would have to listen and wait for a client to connect to it. However,
+if we used UDP, it could send data to and receive data from any other socket
+without first making a connection. UDP sends datagrams or packets instead of
+streams of data like TCP does. The datagrams that are received may not be in
+the right order but they will be complete.
+
+When you set up a UDP socket, it's type is socket.SOCK_DGRAM
+
+udp_server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+A UDP socket also has to be bind to a port and network address
+udp_server.bind(("0.0.0.0", 20001))  # port 2001 is often used to test UDP
+
+As there is no connection socket to receive data from, the recvfrom function
+is used, which not only returns the data received, but also the address where
+the data came from:
+data, client_address = udp_server.recvfrom(1024)
+
+The number 1024 is how many bytes to receive, if the packet is more than this,
+then there will be an error message
+
+When sending data, the sendto function is used and a specific address is given.
+
+udp.sendto(data, client_address)
+that example sends data back to the address where it was sent to
+data = 'hi'
+udp.sendto(data, ("0.0.0.0", 2001))
