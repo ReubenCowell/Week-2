@@ -1,0 +1,27 @@
+Transmitting bitmap images
+
+
+Bitmap files
+
+A common way of storing digital images is by storing a colour represented in binary for each pixel, one after another.
+Metadata, such as the width and height of the image in pixels, is also stored and is used to arrange the pixels correctly.
+
+Bitmaps map data to bits and map pixels to bits, the number of bits used to represent colour is called the colour depth,
+modern ones tend to use 24 to 32 bits, and they use the rgb colour system (red, green, blue).
+
+Each value used 8 bits that represent transparency and 255 being opaque, red is (225,0,0), blue is (0,0,255)
+while is all 255 and black is all 0
+
+Other file formats
+
+Images are very rarely stored in bitmap format, because they would be too large. The image above image had four bytes
+for every pixel; with 2,073,600 pixels, it would take 66,355,200 bits or ~8MB of data for just one image.
+
+To keep the size down, most images are stored in a compressed format, and these will be the formats you are used to.
+
+.PNG is a bitmap image format stored using lossless compression; it uses patterns in pixel colour to reduce the amount
+of data that is stored. The .JPG format uses a lossy compression scheme, getting rid of colour data that the human eye
+would not pick up.
+
+If bits are lost in these formats, large areas of the image may be affected. If you want to send them over an unreliable
+ transmission, error detection and correction methods are needed.
