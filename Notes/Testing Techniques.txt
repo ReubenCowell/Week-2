@@ -1,0 +1,62 @@
+https://www.futurelearn.com/courses/networking-with-python-socket-programming-for-communication/6/steps/1120277
+
+Test data
+
+The first part of any testing process is to establish the data you would like to input to test your code. The choice of data should be particular and purposeful; it should be chosen so that it will test the logic you have implemented in your code.
+
+You should test both raw input data that your program processes (such as temperature values from a sensor) and data that impacts the execution of your program (for example, the menu options chosen by your user).
+
+Make sure to choose data that covers all of the following categories:
+
+Normal data that matches conditions in your code
+Borderline data that only just matches the conditions
+Erroneous data that is of the correct type but outside the range expected
+Invalid data that is another type to that which your program expects, such as strings where you expected integers, or vice versa
+You should also test what happens to your program when no data is entered
+
+Testing is an important part of the development process. In this step you will learn about the benefits of thorough testing, how to pick test data, and how simulation, such as the one used in the previous step, is a great testing practice for you to use.
+
+
+When developing an application, there are two types of testing you should undergo:
+
+Testing to improve development
+Testing to inform evaluation
+Development tests are the kind you do when you are writing your program, when you debug after you write some new code.
+
+The testing I would like to focus on here is the testing to inform evaluation. This is the final stage of development and should be carried out in a methodical way, with design and forethought. This is when you try out every possible use of your program and try to find ways in which it can be used that you do not expect. Testing your applications thoroughly is the best way to detect bugs or errors in logic hidden in your program.
+
+Almost all programs you will write will involve three stages: input of data, processing, and output. These three stages form the basis of the tests you should perform.
+
+The input of data is the part you have control over, and the main tool of your testing.
+The processing stage is the subject of your testing, and is the bit you want to debug.
+The outputs allow you to evaluate the tests you have performed, by asking, “Does the output produced match the expected response?”
+Test data
+
+The first part of any testing process is to establish the data you would like to input to test your code. The choice of data should be particular and purposeful; it should be chosen so that it will test the logic you have implemented in your code.
+
+You should test both raw input data that your program processes (such as temperature values from a sensor) and data that impacts the execution of your program (for example, the menu options chosen by your user).
+
+Make sure to choose data that covers all of the following categories:
+
+Normal data that matches conditions in your code
+Borderline data that only just matches the conditions
+Erroneous data that is of the correct type but outside the range expected
+Invalid data that is another type to that which your program expects, such as strings where you expected integers, or vice versa
+You should also test what happens to your program when no data is entered
+Brute force
+
+The simplest way to test your programs is through brute force, by manually running the program and entering your test data at the appropriate points.
+
+Running the tests manually allows you to see the exact errors caused as they happen. This is useful in a way, as you can address bugs caused by specific data while the process is fresh in your mind.
+
+It is even better if you can get someone else to test your program manually. The person will tell you a lot about the interface and use of your application. Having someone with no knowledge of the underlying processes of your program will give you useful insight into where you need to add clarity to your program.
+
+While this process is good, and with thorough test data can catch almost all the bugs in your code (you never get rid of all of them), it does have some drawbacks. It can be a very long and laborious process to enter very similar data into a program again and again. Human beings are lazy, and when we get bored we find ways to make life easier for ourselves. The longer your testing session lasts, the less effective you will be as a tester.
+
+There is a solution to this, which can make testing not only easy and thorough, but also automated.
+
+Simulation: the hero of testing
+
+Simulations allow you to run your code and feed your test data in, without the need for a manual tester. This technique makes use of code to test your programs, and involves writing a test script. The test script takes your program and your test data and runs the tests one after another, producing a log that shows whether the test failed or not.
+
+Test scripts are fast and aren’t prone to getting tired or lazy, which makes them much better at testing than a manual process. The real benefit of simulation is that it is repeatable, so you can run the same tests again and again over a short space of time. As a developer, this helps you make sure your tests are producing reliable results, and you can test your fixes quickly, too.
