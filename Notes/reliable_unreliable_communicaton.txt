@@ -1,0 +1,26 @@
+There are two types of connection, reliable and unreliable.
+
+A reliable connection is one that ensures data is transmitted/received correctly
+and the data is correct when it is received. it is used when the data that is
+received needs to be correct for things like email, file transfers or instant
+messaging. However, making it so reliable means that it is a lot less efficient.
+The TCP (Transmission Control Protocol) is an example of a reliable method, but
+it adds 42-63 extra bytes along with the message and the receiving device has
+to send back data too.
+
+Unreliable communication systems are more efficient because they send less data.
+They don't set up connections or check if the data was received or if it was in
+the right order. It may be used when minor data loss would not prevent an
+application from working. Examples may include music or video streaming, gaming,
+continuous transmission of sensor data, broadcasting data and video/voice
+calling.
+User Datagram Protocol (UDP) is a widely used unreliable protocol. UDP adds only
+a small amount of data compared to TCP and is therefore faster and more
+efficient, if the communication can cope with a potential loss of data, or with
+the data arriving out of order.
+
+UDP does not stream data like TCP does, each message is, instead, its own
+Datagram (single packet or message), if the message is received, it will be
+completed.
+
+Complex programs can use a mix of reliable and unreliable data to communicate.
