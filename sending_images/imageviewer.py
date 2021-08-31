@@ -27,7 +27,6 @@ def get_pixel_data():  # gets the pixel data
         rgba = message[1]
         viewer.put_pixel(pos, rgba)  # puts the colour on the imageviewer window
         print(pos,rgba)  # prints the data
-        print(last_pixel_updated)  
         if (pos[0] - last_pixel_updated[0] > 1) or (pos[1] - last_pixel_updated[1] > 1): # checks if a pixel is out of sequence by seeing whether their locations subtract to more than one
             lost_pixels += 1  # this is teh variable for the amount of lost pixels
             viewer.text = lost_pixels  # updates the text at the top of the imageviewer window
@@ -38,13 +37,15 @@ def get_pixel_data():  # gets the pixel data
 udp_server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 udp_server.bind(("0.0.0.0", 20001))
 
-tot_pixels, client_address = udp_server.recvfrom(1024)
-print(tot_pixels.decode())
+tot_pixels, client_address = udp_server.recvfrom(1024)  # gets the total pixels from the sender
+print(tot_pixels.decode())  # prints it to screen
 
 # sets the variables:
 lost_pixels = 0     
 last_pixel_updated = (-1, -1)
 viewer.start(get_pixel_data)  # starts the image viewer with the get_pixel_data function
 
-recvd_pixels = int(tot_pixels.decode()) - lost_pixels
-print('Image recieved:\nTotal pixels: {}\nLost pixels: {}\nPixels recieved: {}'.format(tot_pixels,lost_pixels,recvd_pixels))
+recvd_pixels = int(tot_pixels.decode()) - lost_pixels  # calculates the total recieved pixels
+
+# prints an overview of what was sent and recieved
+print('\n----------------------------\nImage recieved:\nTotal pixels: {}\nLost pixels: {}\nPixels recieved: {}'.format(tot_pixels,lost_pixels,recvd_pixels))
